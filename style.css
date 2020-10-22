@@ -1,0 +1,13 @@
+article.home .thumbnail{
+	width: 100%;
+	padding: 5%;
+}
+
+article.home .thumbnail img{
+	width: inherit;
+	padding: 5%;
+}
+
+body{
+	background-color: beige;
+}
