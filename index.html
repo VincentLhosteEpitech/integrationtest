@@ -3,34 +3,47 @@
 <head>
   <meta charset="utf-8">
   <title>Mobilier du Berry</title>
-  <link rel="stylesheet" href="bootstrap.css">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="bootstrap.css"><!--intégration de Bootstrap-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <!--Intégration de font awesome(pour faire des icones)-->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;1,100;1,300&display=swap" rel="stylesheet"> <!--Intégration de roboto-->
+  <link rel="stylesheet" href="css/nouislider.min.css"></style><!--no ui slider, css, library qui sert à faire des jauges-->
+  <link rel="stylesheet" href="style.css"><!--feuille de style-->
+ 
+
   <!--<script src="script.js"></script>-->
 
   <!-- Optional JavaScript -->
 
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-  <!--<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+ <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>-->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+  <script src="js/nouislider.min.js"></script>
+  <script type="text/javascript" src="js/script.js"></script>
+
 </head>
-<body>
+
 	 
 	<div class="container-fluid">
 	 	<div class="row">
+	 			<div class="col-2 col-xs-2 col-sm-2 col-md-2" style="background-color:red;">
+	 				<img id="logo" class="main_logo" src="images/Logo.png">
+	 			</div>
 
-		 		<div class="col-8 col-xs-8 col-sm-8 col-md-10" style="background-color:red;">
+		 		<div class="col-6 col-xs-6 col-sm-6 col-md-8" style="background-color:red;">
 
 		 			<!-- NAVIGATION -->
 
 		 			<nav class="navbar navbar-expand-lg navbar-light">
 						  <!--<a class="navbar-brand" href="#">Navbar</a>-->
 
-						  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-
+						 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+						
 						  <span class="navbar-toggler-icon"></span>
 						  </button>
-
+			
 						  <div class="collapse navbar-collapse" id="navbarSupportedContent">
 						    <ul class="navbar-nav mr-auto">
 
@@ -67,11 +80,11 @@
 	 	</div><!--ROW1-->
 	 	<!--second top row-->
 	 	<div class="row">
-	 		<div class="col-12 col-xs-12 col-sm-8" style="background-color:brown;">
+	 		<div class="col-12 col-xs-12 col-sm-8">
 	 		<!-- SEARCH FORM -->
 	 			<form class="form-inline my-2 my-lg-0">
+	 					  <button class="btn btn-outline-success my-2 my-sm-0" type="submit"></button>
 					      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-					      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
 				</form>
 	 		</div><!--COL-->
 	 		<div class="col-12 col-xs-12 col-sm-4" style="background-color:green;">
@@ -94,57 +107,388 @@
 
 
 	 	<div class="row">
-	 		<!-- ne jamais mettre le css directement dans le dur, il faudra tout faire dans le style-->
-	 		<div class="col-12 col-xs-12 col-sm-6 col-md-3" style="height:500px;background-color:blue;">
-		 		<article class="home">
-		 			<div class="thumbnail">
-		 				<img src="images/seal.jpg">
-		 			</div>
+
+
+
+
+	 		<!-- on utilise le collapse de bootstrap  -->
+	 		<!-- ne jamais mettre le css directement dans le dur, il faudra tout faire dans le style !! -->
+	 		<div class="col-12 col-xs-12 col-sm-6 col-md-6 col-xl-3 hider">
+	 			<div id="filters-widget">
+			 		<div class="homepage-widget">
+			 			<p>
+							  <button class="btn homepage-widget-button" type="button" data-toggle="collapse" data-target="#collapse" aria-expanded="false" aria-controls="collapse">
+							    Collection
+							  </button>
+						</p>
+						<div class="collapse" id="collapse">
+							  <div class="card card-body">
+							  	<ul class="widget-checkboxes">
+							  		<li>
+							   			<input type="checkbox" name="personnepersonnepersonne" value="1" checked> Lounge
+							   		</li>
+							   		<li>
+							   			<input type="checkbox" name="personnepersonnepersonne" value="1" checked> Très lounge
+							   		</li>
+							   		<li>
+							   			<input type="checkbox" name="personnepersonnepersonne" value="1" checked> Lounge +
+							   		</li>
+							   	</ul>
+							  </div>
+						</div>
+					</div>
+
+
+
+					<div class="homepage-widget">
+			 			<p>
+							  <button class="btn homepage-widget-button" type="button" data-toggle="collapse" data-target="#collapse2" aria-expanded="false" aria-controls="collapse2">
+							    Color
+							  </button>
+						</p>
+						<div class="collapse" id="collapse2">
+							  <div class="card card-body">
+							  	<ul class="widget-checkboxes">
+							  		<li>
+							   			<input type="checkbox" name="personnepersonnepersonne" value="1" checked> Lounge
+							   		</li>
+							   		<li>
+							   			<input type="checkbox" name="personnepersonnepersonne" value="1" checked> Très lounge
+							   		</li>
+							   		<li>
+							   			<input type="checkbox" name="personnepersonnepersonne" value="1" checked> Lounge +
+							   		</li>
+							   	</ul>
+							  </div>
+						</div>
+					</div>
+
+
+					<div class ="homepage-widget">
+						<div id="range-slider">
+							<div id="slider"></div>
+						</div>	
+					</div>
+
+
+				</div>
+	 		</div><!--COL-->
+
+
+	 		<div class="col-12 col-xs-12 col-sm-6 col-md-6 col-xl-3">
+	 			<article class="home">
+		 			<a href="#">
+		 				<div class="thumbnail hvr-trim">
+		 					<img src="images/seal.jpg" class="thumbnail_img" alt="">
+
+		 				</div>
+		 			</a>
 		 			<div class="links">
-		 				<div>
-		 					
+		 				<div class="namerating">
+		 					<h3 class ="product_title">Coombes</h3>
+		 					<h4 class="product_category">Lounge</h4>
+			 					<a href="#">
+			 						<p class="product_notation">
+					 					<span class="fa fa-star checked"></span>
+										<span class="fa fa-star checked"></span>
+										<span class="fa fa-star checked"></span>
+										<span class="fa fa-star"></span>
+										<span class="fa fa-star"></span>
+									</p>
+								</a>
 		 				</div>
 		 				<div>
-		 					
+		 				<div class="price-links">
+		 					<p>
+		 						$2,600
+		 					</p>
+		 					<div class="product_cart">
+			 					<a href="#" class="quick_cart_link">
+			 						<img src="images/cardquick.png" alt="link to this product cart">
+			 					</a>
+			 				</div>
 		 				</div>
 		 			</div>
 		 		</article>
+
 	 		</div><!--COL-->
-	 		<div class="col-12 col-xs-12 col-sm-6 col-md-3" style="height:300px;background-color:red;">
-	 		yo
+
+
+
+
+
+	 		<div class="col-12 col-xs-12 col-sm-6 col-md-6 col-xl-3">
+	 			<article class="home">
+		 			<a href="#">
+		 				<div class="thumbnail hvr-trim">
+		 					<img src="images/seal.jpg" class="thumbnail_img" alt="">
+
+		 				</div>
+		 			</a>
+		 			<div class="links">
+		 				<div class="namerating">
+		 					<h3 class ="product_title">Coombes</h3>
+		 					<h4 class="product_category">Lounge</h4>
+			 					<a href="#">
+			 						<p class="product_notation">
+					 					<span class="fa fa-star checked"></span>
+										<span class="fa fa-star checked"></span>
+										<span class="fa fa-star checked"></span>
+										<span class="fa fa-star"></span>
+										<span class="fa fa-star"></span>
+									</p>
+								</a>
+		 				</div>
+		 				<div>
+		 				<div class="price-links">
+		 					<p>
+		 						$2,600
+		 					</p>
+		 					<div class="product_cart">
+			 					<a href="#" class="quick_cart_link">
+			 						<img src="images/cardquick.png" alt="link to this product cart">
+			 					</a>
+			 				</div>
+		 				</div>
+		 			</div>
+		 		</article>
+
 	 		</div><!--COL-->
-	 		<div class="col-12 col-xs-12 col-sm-6 col-md-3" style="height:400px;background-color:green;">
-	 		yo
+
+	 		<div class="col-12 col-xs-12 col-sm-6 col-md-6 col-xl-3">
+	 			<article class="home">
+		 			<a href="#">
+		 				<div class="thumbnail hvr-trim">
+		 					<img src="images/seal.jpg" class="thumbnail_img" alt="">
+
+		 				</div>
+		 			</a>
+		 			<div class="links">
+		 				<div class="namerating">
+		 					<h3 class ="product_title">Coombes</h3>
+		 					<h4 class="product_category">Lounge</h4>
+			 					<a href="#">
+			 						<p class="product_notation">
+					 					<span class="fa fa-star checked"></span>
+										<span class="fa fa-star checked"></span>
+										<span class="fa fa-star checked"></span>
+										<span class="fa fa-star"></span>
+										<span class="fa fa-star"></span>
+									</p>
+								</a>
+		 				</div>
+		 				<div>
+		 				<div class="price-links">
+		 					<p>
+		 						$2,600
+		 					</p>
+		 					<div class="product_cart">
+			 					<a href="#" class="quick_cart_link">
+			 						<img src="images/cardquick.png" alt="link to this product cart">
+			 					</a>
+			 				</div>
+		 				</div>
+		 			</div>
+		 		</article>
+
 	 		</div><!--COL-->
-	 		<div class="col-12 col-xs-12 col-sm-6 col-md-3" style="height:500px;background-color:pink;">
-	 		yo
+
+	 		<div class="col-12 col-xs-12 col-sm-6 col-md-6 col-xl-3">
+	 			<article class="home">
+		 			<a href="#">
+		 				<div class="thumbnail hvr-trim">
+		 					<img src="images/seal.jpg" class="thumbnail_img" alt="">
+
+		 				</div>
+		 			</a>
+		 			<div class="links">
+		 				<div class="namerating">
+		 					<h3 class ="product_title">Coombes</h3>
+		 					<h4 class="product_category">Lounge</h4>
+			 					<a href="#">
+			 						<p class="product_notation">
+					 					<span class="fa fa-star checked"></span>
+										<span class="fa fa-star checked"></span>
+										<span class="fa fa-star checked"></span>
+										<span class="fa fa-star"></span>
+										<span class="fa fa-star"></span>
+									</p>
+								</a>
+		 				</div>
+		 				<div>
+		 				<div class="price-links">
+		 					<p>
+		 						$2,600
+		 					</p>
+		 					<div class="product_cart">
+			 					<a href="#" class="quick_cart_link">
+			 						<img src="images/cardquick.png" alt="link to this product cart">
+			 					</a>
+			 				</div>
+		 				</div>
+		 			</div>
+		 		</article>
+
 	 		</div><!--COL-->
+
+	 		<div class="col-12 col-xs-12 col-sm-6 col-md-6 col-xl-3">
+	 			<article class="home">
+		 			<a href="#">
+		 				<div class="thumbnail hvr-trim">
+		 					<img src="images/seal.jpg" class="thumbnail_img" alt="">
+
+		 				</div>
+		 			</a>
+		 			<div class="links">
+		 				<div class="namerating">
+		 					<h3 class ="product_title">Coombes</h3>
+		 					<h4 class="product_category">Lounge</h4>
+			 					<a href="#">
+			 						<p class="product_notation">
+					 					<span class="fa fa-star checked"></span>
+										<span class="fa fa-star checked"></span>
+										<span class="fa fa-star checked"></span>
+										<span class="fa fa-star"></span>
+										<span class="fa fa-star"></span>
+									</p>
+								</a>
+		 				</div>
+		 				<div>
+		 				<div class="price-links">
+		 					<p>
+		 						$2,600
+		 					</p>
+		 					<div class="product_cart">
+			 					<a href="#" class="quick_cart_link">
+			 						<img src="images/cardquick.png" alt="link to this product cart">
+			 					</a>
+			 				</div>
+		 				</div>
+		 			</div>
+		 		</article>
+
+	 		</div><!--COL-->
+
+	 		<div class="col-12 col-xs-12 col-sm-6 col-md-6 col-xl-3">
+	 			<article class="home">
+		 			<a href="#">
+		 				<div class="thumbnail hvr-trim">
+		 					<img src="images/seal.jpg" class="thumbnail_img" alt="">
+
+		 				</div>
+		 			</a>
+		 			<div class="links">
+		 				<div class="namerating">
+		 					<h3 class ="product_title">Coombes</h3>
+		 					<h4 class="product_category">Lounge</h4>
+			 					<a href="#">
+			 						<p class="product_notation">
+					 					<span class="fa fa-star checked"></span>
+										<span class="fa fa-star checked"></span>
+										<span class="fa fa-star checked"></span>
+										<span class="fa fa-star"></span>
+										<span class="fa fa-star"></span>
+									</p>
+								</a>
+		 				</div>
+		 				<div>
+		 				<div class="price-links">
+		 					<p>
+		 						$2,600
+		 					</p>
+		 					<div class="product_cart">
+			 					<a href="#" class="quick_cart_link">
+			 						<img src="images/cardquick.png" alt="link to this product cart">
+			 					</a>
+			 				</div>
+		 				</div>
+		 			</div>
+		 		</article>
+
+	 		</div><!--COL-->
+
+	 		<div class="col-12 col-xs-12 col-sm-6 col-md-6 col-xl-3">
+	 			<article class="home">
+		 			<a href="#">
+		 				<div class="thumbnail hvr-trim">
+		 					<img src="images/seal.jpg" class="thumbnail_img" alt="">
+
+		 				</div>
+		 			</a>
+		 			<div class="links">
+		 				<div class="namerating">
+		 					<h3 class ="product_title">Coombes</h3>
+		 					<h4 class="product_category">Lounge</h4>
+			 					<a href="#">
+			 						<p class="product_notation">
+					 					<span class="fa fa-star checked"></span>
+										<span class="fa fa-star checked"></span>
+										<span class="fa fa-star checked"></span>
+										<span class="fa fa-star"></span>
+										<span class="fa fa-star"></span>
+									</p>
+								</a>
+		 				</div>
+		 				<div>
+		 				<div class="price-links">
+		 					<p>
+		 						$2,600
+		 					</p>
+		 					<div class="product_cart">
+			 					<a href="#" class="quick_cart_link">
+			 						<img src="images/cardquick.png" alt="link to this product cart">
+			 					</a>
+			 				</div>
+		 				</div>
+		 			</div>
+		 		</article>
+
+	 		</div><!--COL-->
+
+	
+
+
+
+	 		<div class="col-12">
+	 			<nav aria-label="Page navigation example">
+                <ul class="pagination pagination-lg">
+                    <li class="page-item item1">
+                    	<a class="page-link item">1</a>
+                    </li>
+                    <li class="page-item item2">
+                    	<a class="page-link item">2</a>
+                    </li>
+                    <li class="page-item item3">
+                    	<a class="page-link item">3</a>
+                    </li>
+                    <li class="page-item item4">
+                    	<a class="page-link item">4</a>
+                    </li>
+                    <li class="page-item item5">
+                    	<a class="page-link item">5</a>
+                    </li>
+                    <li class="page-item item6">
+                    	<a class="page-link item">6</a>
+                    </li>
+                    <li class="page-item item7">
+                    	<a class="page-link item">7</a>
+                    </li>
+                    <li class="page-item item8">
+                    	<a class="page-link item">8</a>
+                    </li>
+                    <li class="page-item item9">
+                    	<a class="page-link item">9</a>
+                    </li>
+                    <li class="page-item item10">
+                    	<a class="page-link item">10</a>
+                    </li>
+                    <li class="page-item item-arrow">
+                    	<a class="page-link item">></a>
+                    </li>
+                </ul>
+            </nav>
+	 		</div>
 	 	</div><!--ROW2-->
-
-	 	<div class="row">
-	 		<div class="col-12 col-xs-12 col-sm-6 col-md-3" style="background-color:blue;">
-	 		yo
-	 		</div><!--COL-->
-	 		<div class="col-12 col-xs-12 col-sm-6 col-md-3" style="background-color:red;">
-	 		yo
-	 		</div><!--COL-->
-	 		<div class="col-12 col-xs-12 col-sm-6 col-md-3" style="background-color:green;">
-	 		yo
-	 		</div><!--COL-->
-	 		<div class="col-12 col-xs-12 col-sm-6 col-md-3" style="background-color:pink;">
-	 		yo
-	 		</div><!--COL-->
-	 	</div><!--ROW2-->
-
-
-
-
-
-
-
-
-
-
 
  	</div><!--CONTAINER-->
 

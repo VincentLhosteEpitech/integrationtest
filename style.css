@@ -1,13 +1,321 @@
+/*font family*/
+@font-face {
+    font-family: 'avenir';
+    src: url('fonts/nunito-regular-webfont.woff2') format('woff2'),
+         url('fonts/nunito-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+@font-face {
+    font-family: 'avenir bold';
+    src: url('fonts/nunito-semibold-webfont.woff2') format('woff2'),
+         url('fonts/nunito-semibold-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+/*Désactivation du champ bleu autour des inputs*/
+
+input:focus, textarea:focus {
+    outline: none;
+}
+
+
+
+
+
+
+
+
+
+
+
 article.home .thumbnail{
 	width: 100%;
-	padding: 5%;
 }
 
-article.home .thumbnail img{
-	width: inherit;
-	padding: 5%;
+/*font-family: 'Roboto', sans-serif;*/
+
+article.home .links .namerating {
+	padding-top: 10px;
 }
 
-body{
-	background-color: beige;
+article.home .links .namerating p{
+	font-size: 12px;
+	line-height: 2px;
 }
+
+/*products titles on homepage*/
+
+h3.product_title{
+	font-size: 16px;
+	font-family: 'avenir bold';
+	font-weight: 700;
+	letter-spacing: 2px;
+}
+
+h4.product_category{
+	text-transform: uppercase;
+	font-size: 10px;
+	font-family: 'roboto',
+	font-weight: 100;
+	color: grey;
+}
+
+/*notation stars*/
+
+.fa.fa-star {
+    color: transparent;
+    -webkit-text-stroke: 1px;
+	-webkit-text-stroke-color: black;
+	font-size: 9px;
+}
+
+.fa.fa-star.checked {
+  color: black;
+  background-color: none;
+}
+
+
+/*products cart*/
+
+.product_cart img{
+	float: right;
+}
+
+a.quick_cart_link:hover{
+	opacity: 0.6;
+}
+
+.product_cart img {
+    float: right;
+    width: 20px;
+    top: -20px;
+}
+
+/*thumbnails & thumbnail images*/
+
+article.home .thumbnail img {
+    width: inherit;
+    object-fit: cover;
+    height: 14em;
+}
+
+article.home {
+
+}
+
+
+/*deux divs  en float left pour su'elles soient parralèles*/
+
+.namerating{
+	width: 50%;
+	float: left;
+	padding-left: 1em;
+}
+
+.price-links{
+	padding-top: 5px;
+	width: 50%;
+	float: left;
+	text-align: right;
+	padding-right: 1em;
+}
+
+/*searchbar & searchbar button*/
+
+.form-control.mr-sm-2 {
+    width: 80%;
+    border-radius: 0px;
+    border-bottom: 1px solid black;
+    border-left: none;
+    border-right: none;
+    border-top: none;
+}
+
+button.btn-outline-success {
+  background-image: url(images/Search.png);
+  background-repeat: no-repeat;
+  background-position: 80% 80%;
+  /* put the height and width of your image here */
+  height: 50px;
+  width: 15%;
+  border: none;
+  background-color: transparent;
+}
+
+button.btn-outline-success:hover {
+opacity: 0.4;
+background-color: transparent;
+}
+
+
+/*homepage filterss*/
+
+.btn.homepage-widget-button {
+    color: black;
+    background-color: transparent;
+    border-bottom: 1px solid black;
+    border-top: 0px;
+    border-left: 0px;
+    border-right: 0px;
+    border-radius: 0px;
+    width: 100%;
+    text-align: left;
+    font-family: "avenir";
+}
+
+.card {
+    border: none;
+}
+
+
+
+.btn.homepage-widget-button::after {
+  content:url(images/expand-arrow.png);
+  float: right;
+  width: 3px;
+}
+
+
+.hider {
+	overflow-y: scroll;
+	height:300px;
+	padding: 20px;
+}
+
+ul.widget-checkboxes{
+	list-style-type: none;
+}
+
+
+/*Items*/
+
+
+.item1{
+color: white;
+background-color: black;
+}
+
+.item{
+	width: 10%;
+	float: left;
+	text-align: center;
+}
+
+
+
+
+/*effects from hover.css :)*/
+
+
+/* Trim */
+.hvr-trim {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px transparent;
+  position: relative;
+}
+.hvr-trim:before {
+  content: '';
+  position: absolute;
+  border: white solid 4px;
+  top: 4px;
+  left: 4px;
+  right: 4px;
+  bottom: 4px;
+  opacity: 0;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-property: opacity;
+  transition-property: opacity;
+}
+.hvr-trim:hover:before, .hvr-trim:focus:before, .hvr-trim:active:before {
+  opacity: 1;
+} 
+
+
+
+/*!!!!!!!!!!!!!!! PAGINATION ARNAUD !!!!!!!!!!!!!!!!*/
+
+/*//////////////////////////////////*/
+
+.pagination-lg .page-link {
+    font-size: 0.80rem;
+    line-height: 1.5;
+    color: black;
+}
+
+.pagination.pagination-lg {
+    margin-top: 2em;
+}
+
+.item1 .item{
+	background-color: black;
+	color: white;
+}
+
+.item:hover{
+	background-color: transparent;
+	color: grey;
+	cursor:  pointer; 
+}
+
+.pagination-lg .page-item:first-child .page-link{
+    border-top-left-radius: inherit;
+    border-bottom-left-radius: inherit;
+}
+.pagination-lg .page-item:last-child .page-link{
+    border-top-right-radius: inherit;
+    border-bottom-right-radius: inherit;
+}
+
+.page-item{
+    padding: 0.5rem;
+}
+.page-link{
+    border: inherit;
+    border-radius: inherit;
+}
+
+/*Gestion de la pagination*/
+
+@media screen and (max-width: 1075px){
+    .item10{
+        display: none;
+    }
+    .item9{
+        display: none;
+    }
+}
+@media screen and (max-width: 875px){
+    .item8{
+        display: none;
+    }
+    .item7{
+        display: none;
+    }
+}
+@media screen and (max-width: 675px){
+    .item6{
+        display: none;
+    }
+    .item5{
+        display: none;
+    }
+}
+
+/*//////////////////////////////////*/
+
+
+
+
+
+
+
+
