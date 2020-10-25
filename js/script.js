@@ -8,6 +8,6 @@ window.onload = function(){
       range: {
           'min': 0,
           'max': 100
-      }
+      },
   });
 };

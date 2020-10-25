@@ -143,6 +143,7 @@ article.home {
 	color: black;
 	text-decoration: none;
 	margin-right: 2em;
+	font-size: 13px;
 }
 
 .nav-item a:hover {
@@ -152,7 +153,7 @@ article.home {
 
 /*navbar-button*/
 .navbar{
-        padding-top: 25px;
+        padding-top: 2em;
         padding-right: 0rem;
         padding-bottom: 0rem;
         margin-left: auto;
@@ -165,10 +166,15 @@ article.home {
 
 /*quick access*/
 .quick-access {
-	padding-top: 2%;
+	padding-top: 1%;
 	padding-bottom: 3%;
 }
 
+/*Filter by*/
+.filterby{
+	color: grey;
+	font-size: 12px;
+}
 
 /*searchbar & searchbar button*/
 
@@ -185,7 +191,11 @@ article.home {
     border-left: none;
     border-right: none;
     border-top: none;
+    font-weight: 700;
+    font-size: 19px;
+    letter-spacing: 1px;
 }
+
 
 button.btn-outline-success {
   background-image: url(images/Search.png);
@@ -254,6 +264,8 @@ img.d-block.w-50{
     width: 100%;
     text-align: left;
     font-family: "avenir";
+    padding-left: 0px;
+    padding-bottom: 0px;
 }
 
 .card {
@@ -432,7 +444,7 @@ background-color: black;
 	display: block;
     margin-left: auto;
     margin-right: auto;
-    padding-top: 25px;
+    padding-top: 2em;
 }
 
 .cart:hover {
@@ -444,7 +456,7 @@ background-color: black;
 
 .login{
 	text-align: center;
-	padding-top: 25px;
+	padding-top: 2em;
 }
 
 .login a{
